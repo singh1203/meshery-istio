@@ -13,8 +13,6 @@ on:
       - "*"
   release:
     types: [published]
-   workflow_dispatch:  # This allows manual triggering
-   
 jobs:
   SetPatternfileForServicemeshInstall:
     runs-on: ubuntu-22.04
