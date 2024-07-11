@@ -11,6 +11,7 @@ on:
   pull_request:
     branches:
       - "*"
+  workflow_dispatch:
   release:
     types: [published]
 jobs:
@@ -66,7 +67,7 @@ jobs:
 
   UpdateDocsForServicemeshInstall:
     needs: TestIstioForServicemeshInstall
-    if: "always() && github.event_name != 'pull_request' "
+    if: always() && github.event_name != 'pull_request'
     runs-on: ubuntu-22.04
     steps:
       - name: Skip if needed
@@ -181,7 +182,7 @@ jobs:
 
   UpdateDocsForServicemeshAndAddon:
     needs: TestIstioForServicemeshAndAddon
-    if: "always() && github.event_name != 'pull_request' "
+    if: always() && github.event_name != 'pull_request'
     runs-on: ubuntu-22.04
     steps:
       - name: Skip if needed
@@ -296,7 +297,7 @@ jobs:
 
   UpdateDocsForServicemeshAndSampleApp:
     needs: TestIstioForServicemeshAndSampleApp
-    if: "always() && github.event_name != 'pull_request' "
+    if: always() && github.event_name != 'pull_request'
     runs-on: ubuntu-22.04
     steps:
       - name: Skip if needed
