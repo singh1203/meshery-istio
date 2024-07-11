@@ -47,7 +47,7 @@ jobs:
 
   TestIstioForServicemeshInstall:
     needs: SetPatternfileForServicemeshInstall
-    uses: meshery/meshery/.github/workflows/test_adaptersv2.yaml@master
+    uses: singh1203/meshery/.github/workflows/test_adaptersv2.yaml@CI_workflow
     with:
       expected_resources: istiod,istio-egressgateway,istio-ingressgateway
       expected_resources_types: pod,pod,pod
